@@ -1,0 +1,9 @@
+players:
+  "uuid_of_player_1":
+    head: 1  # 头部骨折 1处
+    arm: 0   # 手臂骨折 0处
+    leg: 2   # 腿部骨折 2处
+  "uuid_of_player_2":
+    head: 0
+    arm: 1
+    leg: 1

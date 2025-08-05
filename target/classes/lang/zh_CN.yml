@@ -1,0 +1,30 @@
+fracture:
+  status_head: "§7头部骨折：%count%"
+  status_arm: "§7手臂骨折：%count%"
+  status_leg: "§7腿部骨折：%count%"
+  healed_all: "§a所有骨折已治愈！"
+  healed_head: "§a头部骨折已治愈！"
+  healed_arm: "§a手臂骨折已治愈！"
+  healed_leg: "§a腿部骨折已治愈！"
+  no_fracture: "§c你没有任何骨折！"
+  invalid_body_part: "§c无效的身体部位！"
+  reload_config: "§a配置文件已重新加载！"
+
+command:
+  player_only: "§c该命令只能由玩家执行！"
+  help:
+    header: "§6========== §e骨折系统帮助 §6=========="
+    status: "§e/fz status §7- 查看你的骨折状态"
+    heal_all: "§e/fz heal all §7- 治愈所有骨折"
+    heal_part: "§e/fz heal <head|arm|leg> §7- 治愈特定部位的骨折"
+    reload: "§e/fz reload §7- 重新加载配置文件"
+    give_painkiller: "§e/fz give painkiller [数量] §7- 获取止痛药"
+    give_firstaid: "§e/fz give firstaid [数量] §7- 获取手术包"
+    help: "§e/fz help §7- 显示此帮助信息"
+    footer: "§6=================================="
+  unknown: "§c未知命令！使用 /fz help 查看帮助。"
+
+items:
+  painkiller_effect: "§a止痛药效果剩余时间: §e%time%秒"
+  firstaidkit_uses_left: "§e剩余使用次数: §a%uses%"
+  firstaidkit_expired: "§c手术包已用完！"

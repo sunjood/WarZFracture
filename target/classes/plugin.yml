@@ -1,0 +1,20 @@
+name: WarZFracture
+main: online.warz.warZFracture.WarZFracture
+version: 1.0
+softdepend: [PlaceholderAPI]
+commands:
+  fracture:
+    description: 查看和管理骨折状态
+    usage: /fracture [heal|reload]
+    aliases: [fz]
+# 添加这行确保语言文件被打包进插件jar
+resources:
+  - lang/zh_CN.yml
+  - lang/en.yml
+permissions:
+  warzfracture.reload:
+    description: 允许重新加载插件配置
+    default: op
+  warzfracture.give:
+    description: 允许获取治疗物品
+    default: op

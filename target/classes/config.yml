@@ -1,0 +1,153 @@
+# WarZFracture 骨折系统配置文件
+# 作者: Crazy_Jky
+# QQ: 1285988665
+
+# 基础设置
+settings:
+  # 插件语言 (支持: zh_CN, en)
+  language: zh_CN
+  # 是否在控制台显示详细日志
+  debug: false
+  # 数据保存间隔（秒）
+  save-interval: 300
+
+# 骨折系统配置
+fracture:
+  # 头部骨折
+  headFracture:
+    # 受伤时头部骨折概率 (0.05 = 5%)
+    probability: 0.05
+    # 骨折效果
+    effect: "reduce max health by 1"
+    # 效果持续时间（tick）
+    duration: 300
+    # 最大生命值减少量
+    maxHealthPenalty: 2.0
+    # 头部骨折最大数量
+    maxFractures: 1
+    # 药水效果
+    potionEffects:
+      - type: CONFUSION
+        duration: 300
+        amplifier: 1
+      - type: WEAKNESS
+        duration: 300
+        amplifier: 0
+
+  # 手臂骨折
+  armFracture:
+    probability: 0.15
+    effect: "slow down player"
+    duration: 600
+    # 挖掘速度减慢倍数
+    miningSpeedMultiplier: 0.5
+    # 手臂骨折最大数量
+    maxFractures: 2
+    potionEffects:
+      - type: SLOW_DIGGING
+        duration: 600
+        amplifier: 1
+      - type: WEAKNESS
+        duration: 600
+        amplifier: 1
+
+  # 腿部骨折
+  legFracture:
+    probability: 0.20
+    effect: "reduce running speed"
+    duration: 600
+    # 移动速度减慢至正常速度的比例
+    walkSpeedMultiplier: 0.5
+    # 腿部骨折最大数量
+    maxFractures: 2
+    potionEffects:
+      - type: SLOW
+        duration: 600
+        amplifier: 1
+      - type: JUMP
+        duration: 600
+        amplifier: -1
+
+# 摔落伤害设置
+fall:
+  # 最小触发骨折的摔落高度
+  minHeight: 10
+  # 摔落伤害倍数
+  damageMultiplier: 1.5
+  # 是否启用摔落骨折
+  enabled: true
+
+# 治疗道具设置
+# 在 items 部分添加:
+items:
+  painkillers:
+    default:
+      id: "minecraft:potion"
+      name: "§c止痛药"
+      customModelData: 12345
+      effect_duration: 600
+      usage_time: 40
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7使用后可暂时缓解骨折带来的负面效果"
+        - "§7持续时间: %time%秒"
+    basic:
+      id: "minecraft:potion"
+      name: "§c基础止痛药"
+      customModelData: 12346
+      effect_duration: 1200
+      usage_time: 60
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7基础止痛药,可缓解轻微骨折"
+        - "§7持续时间: %time%秒"
+    advanced:
+      id: "minecraft:potion"
+      name: "§c高级止痛药"
+      customModelData: 12347
+      effect_duration: 2400
+      usage_time: 80
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7高级止痛药,可缓解严重骨折"
+        - "§7持续时间: %time%秒"
+
+  firstAidKit:
+    basic:
+      id: "minecraft:book"
+      name: "§a基础医疗手术包"
+      customModelData: 12348
+      durability: 3
+      usage_time: 100
+      heal_time: 100
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7基础医疗手术包,可治疗轻微骨折"
+        - "§7剩余使用次数: %uses%"
+    advanced:
+      id: "minecraft:book"
+      name: "§a高级医疗手术包"
+      customModelData: 12349
+      durability: 5
+      usage_time: 80
+      heal_time: 80
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7高级医疗手术包,可治疗严重骨折"
+        - "§7剩余使用次数: %uses%"
+    professional:
+      id: "minecraft:book"
+      name: "§a专业医疗手术包"
+      customModelData: 12350
+      durability: 10
+      usage_time: 60
+      heal_time: 60
+      sound: "ENTITY_PLAYER_LEVELUP"
+      lore:
+        - "§7专业医疗手术包,可治疗任何骨折"
+        - "§7剩余使用次数: %uses%"
+
+# 消息提示设置
+messages:
+  prefix: "§8[§c骨折系统§8] "
+  useColors: true

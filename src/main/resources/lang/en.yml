@@ -1,0 +1,30 @@
+fracture:
+  status_head: "§7Head fractures: %count%"
+  status_arm: "§7Arm fractures: %count%"
+  status_leg: "§7Leg fractures: %count%"
+  healed_all: "§aAll fractures healed!"
+  healed_head: "§aHead fracture healed!"
+  healed_arm: "§aArm fracture healed!"
+  healed_leg: "§aLeg fracture healed!"
+  no_fracture: "§cYou have no fractures!"
+  invalid_body_part: "§cInvalid body part!"
+  reload_config: "§aConfiguration files reloaded!"
+
+command:
+  player_only: "§cThis command can only be executed by players!"
+  help:
+    header: "§6========== §eFracture System Help §6=========="
+    status: "§e/fz status §7- Check your fracture status"
+    heal_all: "§e/fz heal all §7- Heal all fractures"
+    heal_part: "§e/fz heal <head|arm|leg> §7- Heal specific body part"
+    reload: "§e/fz reload §7- Reload configuration files"
+    give_painkiller: "§e/fz give painkiller [amount] §7- Get painkillers"
+    give_firstaid: "§e/fz give firstaid [amount] §7- Get first aid kits"
+    help: "§e/fz help §7- Show this help message"
+    footer: "§6=================================="
+  unknown: "§cUnknown command! Use /fz help for help."
+
+items:
+  painkiller_effect: "§aPainkiller effect remaining: §e%time% seconds"
+  firstaidkit_uses_left: "§eUses left: §a%uses%"
+  firstaidkit_expired: "§cFirst aid kit expired!"
